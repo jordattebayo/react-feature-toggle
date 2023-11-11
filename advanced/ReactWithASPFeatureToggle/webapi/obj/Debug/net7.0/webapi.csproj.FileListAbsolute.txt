@@ -31,3 +31,12 @@ C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatu
 C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\obj\Debug\net7.0\webapi.pdb
 C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\obj\Debug\net7.0\webapi.genruntimeconfig.cache
 C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\obj\Debug\net7.0\ref\webapi.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Azure.Core.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Azure.Data.AppConfiguration.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Azure.Messaging.EventGrid.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Azure.Security.KeyVault.Secrets.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Microsoft.Azure.AppConfiguration.AspNetCore.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Microsoft.Extensions.Configuration.AzureAppConfiguration.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\Microsoft.FeatureManagement.dll
+C:\Users\jorda\Desktop\codebases\react-feature-toggle\advanced\ReactWithASPFeatureToggle\webapi\bin\Debug\net7.0\System.Memory.Data.dll

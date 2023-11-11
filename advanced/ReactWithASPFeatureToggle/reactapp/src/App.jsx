@@ -1,59 +1,44 @@
-import React, { Component } from 'react';
+import './App.css'
+import { Dialog } from './Dialog'
+import { useEffect, useState } from 'react'
 
-export default class App extends Component {
-    static displayName = App.name;
+function App() {
+    const [isDialogOpen, setIsDialogOpen] = useState(true);
+    const [showNews, setShowNews] = useState("loading");
 
-    constructor(props) {
-        super(props);
-        this.state = { forecasts: [], loading: true };
+    function requestDialogOpen() {
+        if (isDialogOpen) return
+        setIsDialogOpen(true)
     }
 
-    componentDidMount() {
-        this.populateWeatherData();
+    function requestDialogClose() {
+        setIsDialogOpen(false)
     }
 
-    static renderForecastsTable(forecasts) {
-        return (
-            <table className='table table-striped' aria-labelledby="tabelLabel">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Temp. (C)</th>
-                        <th>Temp. (F)</th>
-                        <th>Summary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {forecasts.map(forecast =>
-                        <tr key={forecast.date}>
-                            <td>{forecast.date}</td>
-                            <td>{forecast.temperatureC}</td>
-                            <td>{forecast.temperatureF}</td>
-                            <td>{forecast.summary}</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-        );
+    function toggleDialog() {
+        setIsDialogOpen(isDialogOpen => !isDialogOpen)
     }
 
-    render() {
-        let contents = this.state.loading
-            ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-            : App.renderForecastsTable(this.state.forecasts);
+    useEffect(() => {
+        const fetchFlag = async () => {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE}feature`);
+            const data = await res.text();
+            setShowNews(data);            
+        }
+        fetchFlag().catch((err) => console.error(err))
+    },[])
 
-        return (
-            <div>
-                <h1 id="tabelLabel" >Weather forecast</h1>
-                <p>This component demonstrates fetching data from the server.</p>
-                {contents}
-            </div>
-        );
-    }
-
-    async populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
-    }
+    return (
+        <>
+            {(showNews === "enabled") ? <Dialog toggleDialog={toggleDialog} requestDialogClose={requestDialogClose} requestDialogOpen={requestDialogOpen} isDialogOpen={isDialogOpen} /> : null}
+            <h1>React Feature Toggle</h1>
+            <p className="read-the-docs">
+                To show the news pop up update the ShowNews variable in appsettings.json: <code>VITE_SHOW_NEWS</code>
+            </p>
+            <p>The current value for ShowNews is: {showNews}</p>
+            <button onClick={() => requestDialogOpen()} disabled={!(showNews === "enabled")}>Open News Pop-up</button>
+        </>
+    )
 }
+
+export default App

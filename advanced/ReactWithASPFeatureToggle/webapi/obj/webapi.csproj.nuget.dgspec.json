@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[7.0.13, )"
             },
+            "Microsoft.Azure.AppConfiguration.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Microsoft.FeatureManagement": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
